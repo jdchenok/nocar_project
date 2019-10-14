@@ -231,12 +231,12 @@
 											id="selall" type="checkbox" class="icheckbox_square-blue">
 										</th>
 										<th class="sorting_asc">ID</th>
-										<th class="sorting_desc">订单编号</th>
-										<th class="sorting_asc sorting_asc_disabled">产品名称</th>
-										<th class="sorting_desc sorting_desc_disabled">金额</th>
-										<th class="sorting">下单时间</th>
-										<th class="text-center sorting">订单状态</th>
-										<th class="text-center">操作</th>
+										<th class="sorting_desc">ip</th>
+										<th class="sorting_asc sorting_asc_disabled">端口</th>
+										<th class="sorting_desc sorting_desc_disabled">数据库</th>
+										<th class="sorting">账号</th>
+										<th class="text-center sorting">创建时间</th>
+										<th class="text-center">状态</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -253,12 +253,12 @@
 											<td>${orders.nc_password }</td>
 											<td>${orders.createtime }</td>
 											<td>${orders.updatetime }</td>
-											<td class="text-center">${orders.orderStatusStr }</td>
-											<td class="text-center">
-												<button type="button" class="btn bg-olive btn-xs">订单</button>
-												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/orders/findById.do?id=${orders.id}'">详情</button>
-												<button type="button" class="btn bg-olive btn-xs">编辑</button>
-											</td>
+<%--											<td class="text-center">${orders.orderStatusStr }</td>--%>
+<%--											<td class="text-center">--%>
+<%--												<button type="button" class="btn bg-olive btn-xs">订单</button>--%>
+<%--												<button type="button" class="btn bg-olive btn-xs" onclick="location.href='${pageContext.request.contextPath}/orders/findById.do?id=${orders.id}'">详情</button>--%>
+<%--												<button type="button" class="btn bg-olive btn-xs">编辑</button>--%>
+<%--											</td>--%>
 										</tr>
 									</c:forEach>
 								</tbody>

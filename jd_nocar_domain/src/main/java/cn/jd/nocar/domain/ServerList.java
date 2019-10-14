@@ -61,6 +61,14 @@ public class ServerList {
         this.nc_username = nc_username;
     }
 
+    public String getNc_password() {
+        return nc_password;
+    }
+
+    public void setNc_password(String nc_password) {
+        this.nc_password = nc_password;
+    }
+
     public String getCreatetime() {
         return createtime;
     }
@@ -85,6 +93,7 @@ public class ServerList {
                 ", port='" + port + '\'' +
                 ", servers='" + servers + '\'' +
                 ", nc_username='" + nc_username + '\'' +
+                ", nc_password='" + nc_password + '\'' +
                 ", createtime='" + createtime + '\'' +
                 ", state=" + state +
                 '}';
