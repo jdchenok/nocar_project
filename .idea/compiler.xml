@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jd_nocar_dao" />
-        <module name="jd_nocar_utils" />
         <module name="jd_nocar_domain" />
+        <module name="jd_nocar_utils" />
         <module name="jd_nocar_service" />
         <module name="jd_nocar_web" />
       </profile>
