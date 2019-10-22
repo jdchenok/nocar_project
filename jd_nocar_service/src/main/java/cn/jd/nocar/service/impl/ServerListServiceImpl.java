@@ -18,4 +18,9 @@ public class ServerListServiceImpl implements ServerListService {
     public List<ServerList> findAll() {
         return serverListDao.findAll();
     }
+
+    @Override
+    public void insertServerList(ServerList list) {
+        serverListDao.insertServerList(list);
+    }
 }

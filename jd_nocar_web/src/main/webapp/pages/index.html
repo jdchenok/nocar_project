@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>控制台</title>
     <link rel="stylesheet" href="../resources/layui/css/layui.css">
+    <script src="../resources/layui/layui.js"></script>
 </head>
 <body>
 <ul class="layui-nav" lay-filter="">
@@ -15,20 +16,37 @@
     <div class="layui-form-item">
         <label class="layui-form-label">输入框</label>
         <div class="layui-input-block">
-            <input type="text" name="title" required  lay-verify="required" placeholder="请输入SQL" autocomplete="off" class="layui-input">
+            <input type="text" name="title" required  lay-verify="required" placeholder="请输入SQL" autocomplete="off" class="layui-input" style="height: 100px">
         </div>
     </div>
 
+    <table class="layui-table" id="dataTable"></table>
+
+    <div class="layui-form-item" style="float: right">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
 </form>
 
 <script>
-    //注意：导航 依赖 element 模块，否则无法进行功能性操作
-    layui.use('element', function(){
+    layui.use(['table','element'],function () {
+        var table = layui.table;
         var element = layui.element;
-
-        //…
+        table.render({
+            elem: '#dataTable'
+            ,url:'nihao'
+            ,cols: [[
+                {type:'checkbox'}
+                ,{field:'id', width:80, title: 'IP'}
+                ,{field:'username', width:80, title: '端口'}
+                ,{field:'username', width:100, title: '数据库名称'}
+            ]]
+            ,page: true
+        });
     });
+
 </script>
-<script src="../resources/layui/layui.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>添加数据</title>
     <link rel="stylesheet" href="../resources/layui/css/layui.css">
+    <script src="../resources/layui/layui.js"></script>
 </head>
 <body>
 <ul class="layui-nav" lay-filter="">
@@ -50,35 +51,22 @@
     </div>
 
     <div class="layui-form-item">
-        <div class="layui-input-block">
+        <div class="layui-input-block" style="float: right">
             <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
     </div>
 </form>
-<div class="layui-inline"> <!-- 注意：这一层元素并不是必须的 -->
-    <input type="text" class="layui-input" id="test1">
-</div>
 <script>
-    //注意：导航 依赖 element 模块，否则无法进行功能性操作
-    // layui.use('element','laydate','jquery',function(){
-    //     var $ = layui.jquery;
-    //     var element = layui.element;
-    //     var laydate = layui.laydate;
-    //     //…
-    //     laydate.render({
-    //         elem: '#time_ui' //指定元素
-    //     });
-    // });
-    layui.use('laydate', function(){
+    layui.use(['element','laydate'],function(){
+        var element = layui.element;
         var laydate = layui.laydate;
-
-        //执行一个laydate实例
+        //…
         laydate.render({
-            elem: lay('#test') //指定元素
+            elem: '#time_ui'
+            ,type: 'datetime'
         });
     });
 </script>
-<script src="../resources/layui/layui.js"></script>
 </body>
 </html>
