@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制台</title>
+    <link rel="stylesheet" href="resources/layui/css/layui.css">
+    <script src="resources/layui/layui.js"></script>
+</head>
+<body>
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item layui-this"><a href="">控制台</a></li>
+    <li class="layui-nav-item"><a href="">增加数据库</a></li>
+</ul>
+
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">输入框</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required  lay-verify="required" placeholder="请输入SQL" autocomplete="off" class="layui-input" style="height: 100px">
+        </div>
+    </div>
+
+    <table class="layui-table" id="dataTable"></table>
+
+    <div class="layui-form-item" style="float: right">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    layui.use(['table','element','jquery'],function () {
+        var table = layui.table;
+        var element = layui.element;
+        var $ = layui.jquery;
+        table.render({
+            elem: '#dataTable'
+            ,url:'serverList/findAll.do'
+            ,cols: [[
+                {type:'checkbox'}
+                ,{field:'ip', width:80, title: 'IP'}
+                ,{field:'port', width:80, title: '端口'}
+                ,{field:'nc_username', width:100, title: '数据库名称'}
+            ]]
+            ,page: true
+        });
+    });
+
+</script>
+</body>
+</html>

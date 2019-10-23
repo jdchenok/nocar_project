@@ -12,55 +12,66 @@
     <li class="layui-nav-item layui-this"><a href="">增加数据库</a></li>
 </ul>
 <div></div>
-<form class="layui-form" action="">
+<form class="layui-form" action="" id="form_add">
     <div class="layui-form-item">
         <label class="layui-form-label">IP地址</label>
         <div class="layui-input-block">
-            <input type="text" name="title" required  lay-verify="required" placeholder="IP地址" autocomplete="off" class="layui-input">
+            <input type="text" name="ip" required  lay-verify="required" placeholder="IP地址" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">端口</label>
         <div class="layui-input-block">
-            <input type="text" name="title" required  lay-verify="required" placeholder="端口" autocomplete="off" class="layui-input">
+            <input type="text" name="port" required  lay-verify="required" placeholder="端口" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">数据库名称</label>
         <div class="layui-input-block">
-            <input type="text" name="title" required  lay-verify="required" placeholder="数据库名称" autocomplete="off" class="layui-input">
+            <input type="text" name="servers" required  lay-verify="required" placeholder="数据库名称" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">用户名</label>
         <div class="layui-input-block">
-            <input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+            <input type="text" name="nc_username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">密码</label>
         <div class="layui-input-block">
-            <input type="text" name="title" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            <input type="text" name="nc_password" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">创建时间</label>
         <div class="layui-input-block">
-            <input id="time_ui" type="text" name="title" required  lay-verify="required" placeholder="请点击" autocomplete="off" class="layui-input">
+            <input id="time_ui" type="text" name="createtime" required  lay-verify="required" placeholder="请点击" autocomplete="off" class="layui-input">
         </div>
     </div>
 
     <div class="layui-form-item">
         <div class="layui-input-block" style="float: right">
-            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button id="submit_Ti" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
     </div>
 </form>
 <script>
-    layui.use(['element','laydate'],function(){
+    layui.use(['element','laydate','jquery','form'],function(){
         var element = layui.element;
         var laydate = layui.laydate;
+        var $ = layui.jquery;
+        var from = layui.form;
+
+       $(function () {
+           $("submit_Ti").click(function () {
+               $.post("serverList/insert.do",$("#form_add").serialize(),function () {
+                   
+               })
+           })
+       })
+
         //…
         laydate.render({
             elem: '#time_ui'

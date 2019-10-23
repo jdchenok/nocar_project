@@ -2,6 +2,6 @@
          pageEncoding="UTF-8"%>
 <html>
 <body>
-<jsp:forward page="pages/orders-list.jsp"></jsp:forward>
+<jsp:forward page="pages/index.html"></jsp:forward>
 </body>
 </html>

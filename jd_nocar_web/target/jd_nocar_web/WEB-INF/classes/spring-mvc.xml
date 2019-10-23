@@ -18,15 +18,11 @@
     <context:component-scan base-package="cn.jd.nocar.controller"></context:component-scan>
 <!--视图解析器-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="suffix" value=".jsp"></property>
+        <property name="suffix" value=".html"></property>
         <property name="prefix" value="/pages/"></property>
     </bean>
 <!--设置不过滤静态资源-->
-    <mvc:resources location="/css/" mapping="/css/**" />
-    <mvc:resources location="/img/" mapping="/img/**" />
-    <mvc:resources location="/js/" mapping="/js/**" />
-    <mvc:resources location="/plugins/" mapping="/plugins/**" />
-
+    <mvc:resources location="/resources/" mapping="/resources/**" />
 <!--注解支持-->
     <mvc:annotation-driven></mvc:annotation-driven>
 <!--aop-->
